@@ -68,6 +68,28 @@ const App = () => {
             showsHorizontalScrollIndicator={false}
           />
         </View>
+
+        {/**Ongoing Tasks */}
+        <View style={{ gap: 20 }}>
+          <Text className="font-bold text-2xl tracking-wide">Ongoing Task</Text>
+
+          <FlatList
+            data={taskData}
+            renderItem={({ item }) => (
+              <View
+                style={{ gap: 10, height: 150 }}
+                className="bg-white border border-[#E8D1BA] mr-5 p-5 rounded-xl w-full mb-5 justify-center"
+              >
+                <View>
+                  <Text className="font-medium text-xl tracking-wider">
+                    {item.name}
+                  </Text>
+                </View>
+              </View>
+            )}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
