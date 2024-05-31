@@ -42,6 +42,32 @@ const App = () => {
             <Image source={require("./assets/Vector.png")} />
           </View>
         </View>
+
+        {/**Categories */}
+        <View style={{ gap: 10 }}>
+          <Text className="font-bold text-2xl tracking-wide">Categories</Text>
+
+          <FlatList
+            data={categoriesData}
+            renderItem={({ item }) => (
+              <View
+                style={{ gap: 10 }}
+                className="bg-white mr-5 p-5 rounded-xl"
+              >
+                <View>
+                  <Text className="font-bold text-xl tracking-wider">
+                    {item.name}
+                  </Text>
+                  <Text>{item.description}</Text>
+                </View>
+                <Image source={item.image} />
+              </View>
+            )}
+            keyExtractor={(item) => item.id}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
