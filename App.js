@@ -24,6 +24,24 @@ const App = () => {
             <Image source={require("./assets/person.png")} />
           </TouchableOpacity>
         </View>
+        {/**Search Bar */}
+        <View className="flex flex-row justify-between">
+          {/**TextInput Box  */}
+          <TextInput
+            placeholder="Search"
+            style={{
+              backgroundColor: "white",
+              width: "80%",
+              height: 50,
+              borderRadius: 10,
+              padding: 5,
+            }}
+          />
+          {/**FIlter Icon */}
+          <View className="bg-[#F0522F] p-2 rounded-xl">
+            <Image source={require("./assets/Vector.png")} />
+          </View>
+        </View>
       </View>
     </SafeAreaView>
   );
